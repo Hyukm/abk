@@ -1,0 +1,253 @@
+@charset "UTF-8";
+
+@media print {
+   @page {
+      size: auto;   
+      padding: 0mm;
+      margin: 0mm;
+   }
+
+html {
+      height: auto !important;
+}
+
+body {
+      margin-top: 1rem !important;
+      height: auto !important;
+}
+
+header {
+    padding-left: 3rem;
+}
+
+header .header_line {
+    box-shadow: none;
+    position: unset;
+    height: 5rem;
+}
+
+.header_logo img {
+    height: 3rem;
+}
+
+.header_right, .no_print_out, main::before, .room_swiper .swiper_main, .room_swiper .swiper_thumbnail .swiper-wrapper .swiper-slide:nth-child(n+3), .swiper-slide-thumb-active:after, .btn_room_action, .sec_room_point .img_box, .point_contents:before, .point_contents:after, .footer_content {
+    display: none!important;
+}
+
+main {
+    padding: 0 4rem;
+}
+
+.swiper.swiper_thumbnail {
+    margin-left: 0;
+    width: 100%;
+}
+
+.room_swiper {
+    justify-content: unset;
+}
+
+.room_swiper .swiper_thumbnail .swiper-wrapper {
+    flex-wrap: nowrap;
+}
+
+.room_content section:nth-of-type(2), .sec_room_introduction, .sec_room_facility {
+    margin-bottom: 0!important;
+}
+
+.composite_title h1 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+.composite_title h2, .composite_title p, .sec_room_facility h2, .sec_room_introduction h2, .point_contents h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.composite_title_1 {
+    margin-bottom: 2rem;
+}
+
+.list_room_facility {
+    row-gap: 1rem;
+}
+
+.list_room_facility li {
+    font-size: 1.2rem;
+    padding: 0.1rem 0.5rem;
+}
+
+.point_contents {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.point_contents>div {
+    width: 90%!important;
+}
+
+.point_contents>div:first-of-type {
+    border-right: none;
+    border-bottom: 1px solid #B29658;
+    padding: 0 0 1rem 0;
+}
+
+.point_contents>div:nth-of-type(2) {
+    padding: 2rem 0 0 0;
+}
+
+/* ポイントの途中改ページを回避 */
+.sec_room_point .point_contents {
+break-inside: avoid;
+}
+
+.room_content .sec_room_point {
+    margin: 1rem 0!important;
+    padding-bottom: 1rem;
+}
+
+.sec_room_point .wrapper {
+    margin-top: 1rem!important;
+}
+
+/*------------- お問い合わせ ここから -------------*/
+.room_content .sec_owner_contact {
+    break-inside: avoid;
+    padding-top: 2rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+
+.sec_owner_contact .wrapper::before {
+    border-bottom: 9rem solid transparent;
+    border-left: 7rem solid #91A2C6;
+}
+
+.sec_owner_contact .wrapper::after {
+    border-top: 9rem solid transparent;
+    border-right: 7rem solid #91A2C6;
+}
+
+.sec_owner_contact .owner_h2 {
+    line-height: 1.5;
+}
+
+.sec_owner_contact .owner_h2 h2 {
+    font-size: 1.5rem;
+}
+
+.sec_owner_contact p {
+    font-size: 1rem;
+}
+
+.owner_contact_contents {
+    margin: 1rem 0 1rem 8rem;
+}
+
+.owner_contact_contents .contact_information {
+    line-height: 1.5;
+}
+
+.owner_contact_contents>.contact_information>img {
+    width: 50%;
+}
+
+.owner_contact_contents .contact_information div:nth-child(-n+4) span:first-of-type {
+    font-size: 1rem;
+}
+
+.owner_contact_contents .contact_information div:nth-child(-n+4) span:nth-of-type(2) {
+    font-size: 1.5rem;
+}
+
+.owner_contact_contents .contact_information div:nth-of-type(4) span {
+    font-size: 1rem;
+}
+
+.owner_contact_contents>div>img {
+    left: -7rem;
+}
+
+.owner_contact_contents>.contact_button>img {
+    width: 35%;
+}
+
+.contact_information>div:first-of-type {
+    text-align: center;
+}
+
+.room_content .sec_owner_contact .btn_yellow {
+    height: 4rem;
+    line-height: 4rem;
+    padding-left: 0;
+    margin-bottom: 1rem;
+}
+
+.btn_arrow::before {
+    top: 23px;
+}
+
+.btn_arrow::after {
+    top: 18px;
+}
+
+.btn_yellow div {
+    font-size: 1rem;
+}
+
+.btn_yellow img {
+    width: 6%;
+}
+
+.btn_clear {
+    height: 5rem;
+}
+
+.btn_clear::before {
+    top: 26px;
+}
+
+.btn_clear::after {
+    top: 22px;
+}
+
+.btn_clear img {
+    width: 25%;
+}
+
+.btn_clear span {
+    font-size: 1rem;
+}
+/*------------- お問い合わせ ここまで -------------*/
+
+.room_content .room_overview {
+    padding-top: 3rem;
+    break-inside: avoid;
+}
+
+.definition_list_primary, .point_contents div, .cell_long span {
+    font-size: 1rem;
+}
+
+.definition_list_primary dl strong {
+    font-size: 1.2rem;
+}
+
+.definition_list_primary>dt, .definition_list_primary>dd {
+    padding: 0.5rem 0.7rem!important;
+}
+
+footer .cookie_content {
+    display: none;
+}
+
+.copyright {
+    margin-top: 0;
+    font-size: 1rem;
+    line-height: 30px;
+}
+
+}

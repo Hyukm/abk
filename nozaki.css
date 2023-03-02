@@ -1,0 +1,705 @@
+@charset "utf-8";
+
+/****************************************************************
+
+    お部屋一覧（page-room_archive.php
+
+****************************************************************/
+
+.room_container {
+    padding: 2rem;
+    box-shadow: 0px 0px 6px #00000029;
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.room_container_link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+}
+
+.room_container_link:hover {
+    box-shadow: 0px 0px 10px #00000029;
+}
+
+.room_container .p-main {
+    position: absolute;
+    top: 28px;
+    right: 20px;
+}
+
+/* SP版でのみ ボタン下のお気に入り */
+.room_container .flex .sp_fav {
+    display: none;
+}
+
+/* 写真の部分 */
+.room_image {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    aspect-ratio: 1;
+    object-fit: contain;
+    align-self: center;
+}
+/* h3下の写真 SP版でのみ表示させる */
+.room_details img {
+    display: none;
+}
+
+/* お部屋の情報部分 */
+.room_details {
+    width: 53%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.room_details_title {
+    color: #20428C;
+    font-size: 30px;
+    border: none;
+    margin: 0px;
+}
+
+.room_details_title::before {
+    content: unset;
+}
+
+.room_details_recommend {
+    margin: 13px 0px 10px;
+}
+
+.room_details_main {
+    justify-content: left;
+}
+
+.room_details_main span {
+    font-size: 16px;
+    height: 37px;
+}
+
+.room_details_main strong {
+    font-size: 26px;
+    color: #DC0508;
+}
+
+.room_details_main > .flex:first-child {
+    margin-right: 5%;
+}
+
+.room_details_main > .flex > span {
+    margin-top: 5px;
+}
+
+.room_details_tag {
+    width: 90px;
+    height: 24px;
+    text-align: center;
+    margin-right: 14px;
+    font-size: 14px;
+    background: #B29658 0% 0% no-repeat padding-box;
+    color: #FFFFFF;
+    font-weight: normal;
+}
+
+/* テーブルの部分 */
+.room_details_table {
+    border: 1px solid #E7E7E7;
+}
+
+.room_details_table li {
+    width: 20%;
+    border-right: 1px solid #E7E7E7;
+    text-align: center;
+}
+
+.room_details_table li:last-child {
+    border-right: none;
+}
+
+.room_details_table li h4 {
+    font-weight: normal;
+    /* background: #EEEEEE 0% 0% no-repeat padding-box; */
+    background-color: #F3F5FA;
+    line-height: 40px;
+    /* height: 39px; */
+    margin: 0px;
+    border-bottom: 1px solid #E7E7E7;
+}
+
+.room_details_table li > div {
+    height: 86px;
+}
+
+.room_details_table .flex {
+    align-items: center;
+    justify-content: center;
+}
+
+.room_details_table li:first-child .flex {
+    justify-content: left;
+    padding: 12px 0px 0px 10px;
+}
+
+.room_details_table li:first-child .flex:last-child {
+    justify-content: left;
+    padding-top: 5px;
+}
+
+.room_details_table li:last-child .flex {
+    flex-direction: column;
+}
+
+.room_details_table li:last-child p, .room_details_table li:last-child span {
+    margin: 0 0 5px;
+}
+
+.room_details_table li:last-child span {
+    /* width: 90px; */
+    /* height: 24px; */
+}
+
+.room_details_table .flex span{
+    /* width: 21px;
+    height: 24px;
+    color: #FFFFFF;
+    font-size: 14px;
+    background: #7189AC;
+    line-height: 24px;
+    margin-right: 9px; */
+}
+
+.room_details_icon {
+    width: 21px;
+    height: 24px;
+    color: #FFFFFF;
+    font-size: 14px;
+    background: #7189AC;
+    line-height: 24px;
+    margin-right: 9px;
+}
+
+.room_details_table .flex p {
+    margin: 0px;
+}
+
+/* お部屋のボタン部分 */
+.room_btns {
+    width: 18%;
+    /* padding-top: 80px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.room_btns a {
+    display: block;
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    z-index: 1;
+}
+
+.room_btns .btn_blue {
+    margin-top: 2rem;
+}
+
+.room_btns img {
+    margin-top: 20px;
+}
+
+.room_btns p {
+    margin-top: 18px;
+    font-size: 16px;
+}
+
+.room_btns .btn_line {
+    text-align: center;
+    padding: 0px;
+}
+
+.room_btns .btn_line div img:last-of-type {
+    display: none;
+}
+
+.pc_room_access_location {
+    border-top: 1px solid #E7E7E7;
+    margin-top: 18px;
+    width: 100%;
+}
+
+.pc_room_access_location.flex, .pc_room_access_location .flex {
+    justify-content: left;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.pc_room_access_location .flex figure{
+    margin: 1rem 7px 0 0;
+    width: 16px;
+}
+
+.pc_room_access_location .flex p {
+    margin-top:1.2rem;
+    margin-bottom:0.5rem;
+    margin-right: 15px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.pc_room_access_location .flex .room_second_nearest_station::before {
+    content: "";
+    margin-right: 15px;
+    height: 30px;
+    border: 1px solid #E7E7E7;
+}
+
+.tb_room_access_location {
+    display: none;
+}
+
+
+/*--------------------------------
+	お気に入り
+--------------------------------*/
+
+.p-fav_button {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.p-fav_button>.__icon {
+    position: relative;
+    width: 20px;
+    height: 19px;
+    padding: 2px 0px 0px 5px;
+    display: inline-block;
+    margin: 0;
+    background-color: #FFF;
+    transform: translateY(15%) translateX(-14%);
+}
+
+.p-fav_button>.__icon:before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 19px;
+    display: inline-block;
+    background-image: url(../img/star.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.is-choosen .p-fav_button>.__icon:before {
+    opacity: 0;
+}
+
+.p-fav_button>.__icon:after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 19px;
+    background-image: url(../img/star_clicked.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+.is-choosen .p-fav_button>.__icon:after {
+    opacity: 1;
+}
+
+.p_c_title .p-main .p-fav_button .__text {
+    background-color: #FFF;
+    color: #3B4043;
+    font-size: 16px;
+}
+
+.p-fav_button:before,
+.p-fav_button:after {
+    display: none;
+    z-index: 1;
+    line-height: 1.6 !important;
+}
+
+.p-fav_button:hover {
+    color: rgba(59, 64, 67, 0.7);
+}
+
+.p-fav_button:hover:before,
+.p-fav_button:hover:after {
+    opacity: 1;
+    display: block;
+}
+
+/*=========================================================
+
+  レスポンシブ
+
+==========================================================*/
+.sp_room_access_location {
+    display: none !important;
+}
+@media screen and (max-width: 1150px) {
+
+    .room_container div:nth-of-type(2) {
+        display: block;
+    }
+
+    .room_details_main div:nth-of-type(2), .room_details_table .flex:nth-child(2) {
+        display: flex;
+    }
+
+    .room_image {
+        display: none;
+    }
+
+    .room_details img {
+        display: inline-block;
+        width: 44%;
+        margin-right: 2rem;
+        float: left;
+    }
+
+    .room_details {
+        width: 100%;
+        flex-wrap: wrap;
+        display: inline-block;
+    }
+
+    .room_details_title {
+        width: 100%;
+        border-bottom: 2px solid #E7E7E7;
+    }
+
+    .room_details_recommend {
+        margin: 35px 0px 10px;
+    }
+
+    .room_details_recommend, .room_details_main {
+        width: 52%;
+        display: inline-block;
+    }
+
+    .room_details_main .flex {
+        justify-content: start;
+    }
+
+    .room_details_main > .flex:first-child {
+        margin-right: 0;
+    }
+
+    .room_details ul {
+        width: 100%;
+    }
+
+    .room_btns {
+        margin-top: 2rem;
+        width: 100%;
+        display: flex!important;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .room_btns .btn_line {
+        display: inline-block;
+        max-width: 48%;
+    }
+
+    .room_btns .btn_blue {
+        margin-top: 0;
+        max-width: 48%;
+    }
+
+    .room_btns div {
+        width: 100%;
+    }
+
+    .room_container>div.pc_room_access_location {
+        display: none;
+    }
+
+    .tb_room_access_location {
+        display: block;
+        margin-top: 18px;
+        width: 100%;
+    }
+    
+    .tb_room_access_location .flex {
+        justify-content: left;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .tb_room_access_location .flex:first-of-type div {
+        display: flex;
+    }
+
+    .tb_room_access_location .flex:nth-child(2) {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+    
+    .tb_room_access_location .flex p {
+        margin-right: 15px;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+    }
+
+    .tb_room_access_location .flex:first-of-type div p:nth-of-type(2) {
+        padding-left: 1.5rem;
+        border-left: 1px solid #E7E7E7;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .room_container {
+        padding: 3%;
+    }
+
+    .room_details {
+        width: 100%;
+    }
+
+    .room_details ul {
+        width:100%;
+        display: table;
+    }
+
+    .room_details_table li:first-of-type {
+        width: 100%;
+    }
+
+    .room_details_table li > div {
+        display: flex;
+    }
+
+    .room_details_table li:first-child .flex, .room_details_table li:first-child .flex:last-child {
+        padding: 0;
+        width: 50%;
+        justify-content: center;
+    }
+
+    .room_details_table li h4 {
+        border-top: 1px solid #E7E7E7;
+    }
+
+    .room_details_table li:first-child h4 {
+        border-top: none;
+    }
+
+    .room_details_table li:first-of-type, .room_details_table li:nth-of-type(3) {
+        border-right: none;
+    }
+
+    .room_details_table li:nth-of-type(2), .room_details_table li:nth-of-type(3), .room_details_table li:nth-of-type(4), .room_details_table li:nth-of-type(5) {
+        width: 50%;
+        display: inline-table;
+    }
+
+    .room_btns .btn_line {
+        margin-bottom: 1rem;
+    }
+
+    .room_container div:nth-of-type(2) .tb_room_access_location {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+
+    .tb_room_access_location .flex {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+    }
+
+    .tb_room_access_location .flex:first-of-type div {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .tb_room_access_location img {
+        margin-top: 1rem;
+    }
+
+    .tb_room_access_location .flex p {
+        margin: .5rem;
+    }
+
+    .tb_room_access_location .flex:first-of-type div p:nth-of-type(2) {
+        padding-left: 0;
+        border-top: 1px solid #E7E7E7;
+        border-left: none;
+        padding-top: 0.5rem;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    .room_details {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .room_details_title {
+        font-size: 25px;
+        order: 1;
+        border-bottom: none;
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+    }
+
+    .room_image {
+        order: 2;
+    }
+
+    .room_details_main {
+        order: 3;
+        width: 48%;
+    }
+
+    .room_details_main > .flex:first-child, .room_details_main div:nth-of-type(2) {
+        display: block;
+    }
+
+    .room_details_main > .flex:first-child {
+        margin-bottom: 2rem;
+    }
+
+    .room_details_tag {
+        font-size: 12px;
+        width: 82px;
+        height: 19px;
+        line-height: 19px;
+        margin: 0;
+    }
+
+    .room_details_main strong {
+        font-size: 19px;
+    }
+
+    .room_details_recommend {
+        width: 100%;
+        border-top: solid 1px #E2E2E2;
+        margin: 0;
+        padding: 15px 0;
+        display: block;
+        order: 4;
+    }
+
+    .room_details_table {
+        order: 5;
+    }
+
+    .room_details_table li:first-child .flex {
+        display: flex;
+    }
+
+    .room_details_table li > div {
+        height: 50px;
+    }
+
+    .room_details_table li:last-child .flex {
+        flex-direction: row;
+    }
+
+    .room_details_table li:last-child p {
+        margin-right: 5px;
+    }
+
+    .room_details_table li h4 {
+        background-color: #E7E7E7;
+    }
+
+    .room_container .room_btns {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    .room_btns .btn_line, .room_btns .btn_blue {
+        max-width: 100%;
+        height: 50px;
+    }
+
+    .room_btns .btn_line {
+        color: #fff;
+        position: relative;
+        text-align: center;
+        z-index: 0;
+        background: linear-gradient(90deg, #385eb0 0%, #20428C 50%, #13295a 100%);
+        background-position: right;
+        justify-content: center;
+        background-size: 150% auto;
+    }
+
+    .room_btns .btn_blue {
+        background: #BC9C53;
+        border: solid 1px #9D8142;
+    }
+
+    .room_btns div {
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        padding: 12px 0 15px;
+    }
+
+/* SP版ではお部屋詳細ボタンのイラストwhite表示*/
+    .room_btns .btn_line div img:last-of-type {
+        display: flex;
+    }
+/* お部屋詳細ボタンのイラストノーマル非表示*/
+    .room_btns .btn_line div img:first-of-type {
+        display: none;
+    }
+
+    .room_btns img {
+        margin: 0 9px 0 0;
+    }
+
+    .room_btns p {
+        margin: 0;
+    }
+
+/* SP版では 上部のお気に入り非表示 */
+    .pc_fav {
+        display: none;
+    }
+/* ボタン下のお気に入り表示 */
+    .room_container .flex .sp_fav {
+        display:flex;
+        position: relative;
+        justify-content: center;
+        margin: 20px 0 5px;
+        top: 0;
+        right: 0;
+    }
+
+    .p-fav_button span:last-child {
+        transform: unset;
+    }
+
+    .p-fav_button:after {
+        bottom: -65px;
+    }
+
+    .tb_room_access_location .flex {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 580px) {
+
+    .p-fav_button:after {
+        bottom: -100px;
+    }
+}
